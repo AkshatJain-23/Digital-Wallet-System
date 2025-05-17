@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- User Info -->
+        <div class="user-info-bar">
+            <div class="user-avatar">👤</div>
+            <div class="user-details">
+                <span id="userName" class="user-name"></span>
+                <span id="userEmail" class="user-email"></span>
+            </div>
+        </div>
+        <!-- Auth Section -->
+        <div id="authSection" class="section">
+            <h2>Login / Register</h2>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="register()">Register</button>
+                <button onclick="login()">Login</button>
+            </div>
+        </div>
+
+        <!-- Wallet Section (Hidden initially) -->
+        <div id="walletSection" class="section hidden">
+            <h2>My Wallet</h2>
+            <div class="balance-container">
+                <h3>Balance: <span id="balance">$0.00</span></h3>
+            </div>
+
+            <!-- Deposit Form -->
+            <div class="form-group">
+                <h3>Deposit</h3>
+                <input type="number" id="depositAmount" placeholder="Amount">
+                <button onclick="deposit()">Deposit</button>
+            </div>
+
+            <!-- Withdraw Form -->
+            <div class="form-group">
+                <h3>Withdraw</h3>
+                <input type="number" id="withdrawAmount" placeholder="Amount">
+                <button onclick="withdraw()">Withdraw</button>
+            </div>
+
+            <!-- Transfer Form -->
+            <div class="form-group">
+                <h3>Transfer</h3>
+                <input type="text" id="receiverEmail" placeholder="Receiver's Email">
+                <input type="number" id="transferAmount" placeholder="Amount">
+                <button onclick="transfer()">Transfer</button>
+            </div>
+
+            <!-- Transactions -->
+            <div class="transactions-container">
+                <h3>Recent Transactions</h3>
+                <div id="transactionsList"></div>
+            </div>
+
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
